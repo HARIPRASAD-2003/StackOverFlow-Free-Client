@@ -1,0 +1,115 @@
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2, h3, h4, h5 {
+    color: #333;
+  }
+  
+  p, ul, li {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  blockquote {
+    font-style: italic;
+    color: #888;
+  }
+  
+  cite {
+    font-style: normal;
+    font-weight: bold;
+  }
+  
+  .founder-info {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .founder-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  /* Additional styles to enhance visual appeal */
+  h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  h5 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  p {
+    margin-bottom: 15px;
+  }
+  
+  ul {
+    margin-bottom: 15px;
+  }
+  
+  blockquote {
+    font-size: 18px;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 3px solid #888;
+    margin: 0;
+  }
+  
+  cite {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+  }
+  
+  .founder-details p {
+    margin-bottom: 10px;
+  }
+  
+  .footer {
+    margin-top: 40px;
+  }
+  
+  
+
+@media screen and (max-width: 720px) {
+  .founder-info{
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,140 @@
+/* Chatbot.css */
+
+.chatbot-container {
+  background-color: #f5f8fa;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  padding-top: 34px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.chatbot-logo {
+  height: 40px;
+  width: 40px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.chatbot-title {
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+.chatbot-window {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  padding-right: 16px;
+}
+
+.user-message {
+  background-color: #eef3f7;
+  color: #333;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  align-self: flex-end;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.bot-message {
+  background-color: #fff;
+  color: #333;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  align-self: flex-start;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.chatbot-form {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.chatbot-input {
+  flex-grow: 1;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.send-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.bot-response {
+  background-color: #fff;
+  color: #333;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 16px;
+  word-wrap: break-word;
+}
+
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 4px;
+  animation: dotBlink 1s infinite;
+}
+
+@keyframes dotBlink {
+  0% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+/* Scrollbar styles */
+.chatbot-window::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chatbot-window::-webkit-scrollbar-track {
+  background: #f5f8fa;
+}
+
+.chatbot-window::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 4px;
+}
+
+.chatbot-window::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
