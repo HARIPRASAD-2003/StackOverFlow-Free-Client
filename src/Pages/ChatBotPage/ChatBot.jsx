@@ -20,6 +20,7 @@ const Chatbot = () => {
     }
   };
 
+  
   const getBotResponse = (query) => {
     axios
       .post('https://stack-overflow-free-server-hp.onrender.com/ChatBot/post', { query })
