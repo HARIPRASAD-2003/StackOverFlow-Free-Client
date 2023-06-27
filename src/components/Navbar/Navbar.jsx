@@ -104,29 +104,21 @@ const Navbar = () => {
       :
       <div className="menubar">
         <div className='menu-col' style={{justifyContent: 'center', alignItems: 'center'}}>
-        <div onClick={() => setMenuToggle(false)}><Link to='/About' className='nav-item nav-btn' >About</Link></div>
-        <div onClick={() => setMenuToggle(false)}><Link to='/Products' className='nav-item nav-btn' >Products</Link></div>
-        <div onClick={() => setMenuToggle(false)}><Link to='/Community' className='nav-item nav-btn' >Community</Link></div>
+          <div onClick={() => setMenuToggle(false)}><Link to='/About' className='nav-item nav-btn' >About</Link></div>
+          <div onClick={() => setMenuToggle(false)}><Link to='/Products' className='nav-item nav-btn' >Products</Link></div>
+          <div onClick={() => setMenuToggle(false)}><Link to='/Community' className='nav-item nav-btn' >Community</Link></div>
+        </div>
+        <div className='menu-col' style={{padding:'10px'}}><span className="Span"> </span></div>
+        <div className='menu-col' style={{justifyContent: 'center', alignItems: 'center'}}>
+          <div onClick={() => setMenuToggle(false)}><Link to='/Questions' className='nav-item nav-btn' >Questions</Link></div>
+          <div onClick={() => setMenuToggle(false)}><Link to='/Tags' className='nav-item nav-btn'  >Tags</Link></div>
+          <div onClick={() => setMenuToggle(false)}><Link to='/Users' className='nav-item nav-btn'  >Users</Link></div>
         </div>
         <div>
-        <NavLink to='/Questions' className='side-nav-links' onClick={() => setMenuToggle(false)}>
-            {/* <img src={Globe} alt="Globe"/> */}
-            <p style={{paddingLeft: '10px' }}> Questions </p>
-          </NavLink>
-          <NavLink to='/Tags' className='side-nav-links' style={{paddingLeft: '40px'}} onClick={() => setMenuToggle(false)}>
-            <p>Tags</p>
-          </NavLink>
-          <NavLink to='/Users' className='side-nav-links' style={{paddingLeft: '40px'}} onClick={() => setMenuToggle(false)}>
-            <p>Users</p>
-          </NavLink>
-        </div>
-        <div>
-        <form onSubmit={(e) => handleSearch(e)} className='nav-item' >
-          {/* <la htmlFor="search_input"> */}
+          <form onSubmit={(e) => handleSearch(e)} className='nav-item' >
             <input type="text" id='search_input' placeholder='Search...' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
             <img src={search} alt='search' width="18" className='search-icon'/>
-          
-        </form>
+          </form>
         </div>
         { User === null ?
             <div className="btns">

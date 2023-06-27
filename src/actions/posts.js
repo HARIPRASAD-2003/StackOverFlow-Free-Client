@@ -46,7 +46,7 @@ export const LikePost = (id, userId) => async(dispatch) => {
 
 export const deletePost = (id, navigate) => async(dispatch) => {
       try {
-            const{ data } = api.deletePost(id)
+            api.deletePost(id)
             dispatch(fetchAllPosts())
             navigate('/Community')
             // console.log(data)
@@ -57,7 +57,7 @@ export const deletePost = (id, navigate) => async(dispatch) => {
 
 export const deleteComment = (id, commentId, noOfComments) => async(dispatch) => {
       try {
-            const { data } = await api.deleteComment(id, commentId, noOfComments)
+            await api.deleteComment(id, commentId, noOfComments)
             dispatch(fetchAllPosts())
             // console.log(data)
       } catch (error) {
