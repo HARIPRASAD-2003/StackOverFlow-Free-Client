@@ -34,6 +34,7 @@ export default function Auth(props) {
         alert('Enter a name to continue');
       }
       dispatch(signup({name, email, password}, navigate))
+      navigate('/')
     }else{
       dispatch(login({email, password}, navigate));
     }

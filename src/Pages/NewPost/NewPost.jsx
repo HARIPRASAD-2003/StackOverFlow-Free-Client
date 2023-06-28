@@ -29,11 +29,11 @@ const NewPost = () => {
     for (const file of selectedFiles) {
       const formData = new FormData();
       formData.append('file', file);
-      formData.append('upload_preset', 'fiv1grcc'); // Replace with your upload preset
+      formData.append('upload_preset', 'fiv1grcc');
 
       const response = await fetch(
         `https://api.cloudinary.com/v1_1/dkmz5cbr1/${file.type.includes('video') ? 'video' : 'image'}/upload`,
-        { // Replace 'your-cloud-name' with your Cloudinary cloud name
+        {
           method: 'POST',
           body: formData,
         }
@@ -45,6 +45,7 @@ const NewPost = () => {
 
     setUploadedContentUrls(uploadedUrls);
   };
+
 
   const handleEnter = (e) =>{
     if(e.key === 'Enter'){
@@ -80,13 +81,13 @@ const NewPost = () => {
                 <h4>Content</h4>
                 <p>Upload images or videos</p>
                 <input id="new-post-file" type="file" onChange={handleContentChange} multiple />
-                <button onClick={handleUpload}>Upload</button>
-                <div className='post-media-container'>
+                <input type="button" value='Upload' className='review-btn' onClick={handleUpload} style={{width: 'auto', margin: '5px'}}/>
+                <div className='post-media-container' style={{display: 'flex'}}>
                   {uploadedContentUrls.map((url, index) => (
                     url.includes('video') ? (
-                      <Video className="post-video" key={index} cloudName="dkmz5cbr1" publicId={url} controls width="300" height="200"/>
+                        <Video className="post-video"  cloudName="dkmz5cbr1" publicId={url} controls width="300" height="200" />
                     ) : (
-                      <Image className="post-image" key={index} cloudName="dkmz5cbr1" publicId={url} width="300" height="200" />
+                        <Image className="post-image"  cloudName="dkmz5cbr1" publicId={url} width="300" height="200" />
                     )
                   ))}
                 </div>
