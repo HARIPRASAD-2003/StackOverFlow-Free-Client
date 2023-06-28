@@ -142,5 +142,9 @@
     .tags-list-container{
         display: flex;
     }
+    .tag-container{
+        padding-left: 10px;
+    }
+
     
 }

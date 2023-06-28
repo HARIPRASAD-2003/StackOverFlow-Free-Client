@@ -140,8 +140,8 @@
 }
 
 .Span{
-    display: inline-block;
-    border-bottom: 2px solid #59515133;
+    display: block;
+    border-right: 2px solid #59515133;
 }
 
 

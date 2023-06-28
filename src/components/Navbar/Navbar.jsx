@@ -102,17 +102,19 @@ const Navbar = () => {
         }
       </div>
       :
-      <div className="menubar">
-        <div className='menu-col' style={{justifyContent: 'center', alignItems: 'center'}}>
-          <div onClick={() => setMenuToggle(false)}><Link to='/About' className='nav-item nav-btn' >About</Link></div>
-          <div onClick={() => setMenuToggle(false)}><Link to='/Products' className='nav-item nav-btn' >Products</Link></div>
-          <div onClick={() => setMenuToggle(false)}><Link to='/Community' className='nav-item nav-btn' >Community</Link></div>
-        </div>
-        <div className='menu-col' style={{padding:'10px'}}><span className="Span"> </span></div>
-        <div className='menu-col' style={{justifyContent: 'center', alignItems: 'center'}}>
-          <div onClick={() => setMenuToggle(false)}><Link to='/Questions' className='nav-item nav-btn' >Questions</Link></div>
-          <div onClick={() => setMenuToggle(false)}><Link to='/Tags' className='nav-item nav-btn'  >Tags</Link></div>
-          <div onClick={() => setMenuToggle(false)}><Link to='/Users' className='nav-item nav-btn'  >Users</Link></div>
+      <div className="menubar" >
+        <div style={{display:'flex', paddingRight: '15px', justifyContent: "space-evenly"}}>
+          <div className='menu-col' style={{justifyContent: 'center', alignItems: 'center'}}>
+            <div onClick={() => setMenuToggle(false)}><Link to='/About' className='nav-item nav-btn' >About</Link></div>
+            <div onClick={() => setMenuToggle(false)}><Link to='/Products' className='nav-item nav-btn' >Products</Link></div>
+            <div onClick={() => setMenuToggle(false)}><Link to='/Community' className='nav-item nav-btn' >Community</Link></div>
+          </div>
+          <div className='menu-col' style={{padding:'10px'}}><span className="Span"> </span></div>
+          <div className='menu-col' style={{justifyContent: 'center', alignItems: 'center'}}>
+            <div onClick={() => setMenuToggle(false)}><Link to='/Questions' className='nav-item nav-btn' >Questions</Link></div>
+            <div onClick={() => setMenuToggle(false)}><Link to='/Tags' className='nav-item nav-btn'  >Tags</Link></div>
+            <div onClick={() => setMenuToggle(false)}><Link to='/Users' className='nav-item nav-btn'  >Users</Link></div>
+          </div>
         </div>
         <div>
           <form onSubmit={(e) => handleSearch(e)} className='nav-item' >

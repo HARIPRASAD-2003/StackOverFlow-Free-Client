@@ -21,7 +21,9 @@ const AskQuestion = () => {
     const [availableTags] = useState(tagsList); // Example list of available tags
 
     const handleInputChange = (e) => {
-        setTagInput(e.target.value);
+        if(e.target.value !== " "){
+            setTagInput(e.target.value);
+        }
     };
 
     const handleKeyPress = (e) => {
@@ -37,8 +39,12 @@ const AskQuestion = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log({questionBody, questionTags, questionTitle})
-        dispatch(askQuestion({questionTitle, questionBody, questionTags, userPosted: User.result.name, userId: User?.result?._id}, navigate))
+        if(questionBody.length !== 0 && questionTitle.length !== 0 && questionTags.length !== 0) {
+            console.log({questionBody, questionTags, questionTitle})
+            dispatch(askQuestion({questionTitle, questionBody, questionTags, userPosted: User.result.name, userId: User?.result?._id}, navigate))
+        } else {
+            alert("Invalid question!!! PLease do fill out all the fields...");
+        }
     }
 
     const removetag = (tagToRemove) => {
@@ -84,7 +90,7 @@ const AskQuestion = () => {
                     </div>
                     </label>
                 </div>
-                <input type="submit" value='Review your question' className='review-btn'/>
+                <input type="submit" value='Post your question' className='review-btn'/>
             </form>
         </div>
     </div>
