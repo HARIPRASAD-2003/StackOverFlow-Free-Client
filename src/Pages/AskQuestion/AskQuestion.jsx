@@ -10,7 +10,7 @@ const AskQuestion = () => {
 
     const [questionTitle, setQuestionTitle] = useState('')
     const [questionBody, setQuestionBody] = useState('')
-    // const [questionTags, setQuestionTags] = useState('')
+    const [Focus, setFocus] = useState(false)
 
     const dispatch = useDispatch()
     const User = useSelector((state) => (state.currentUserReducer))
@@ -26,11 +26,16 @@ const AskQuestion = () => {
         }
     };
 
+
     const handleKeyPress = (e) => {
         if (e.key === ' ' && tagInput) {
         if (TagsName.includes(tagInput)) {
+            if(!questionTags.includes(tagInput)) {
             setQuestionTags([...questionTags, tagInput]);
             setTagInput('');
+            } else {
+                setTagInput("");
+            }
         } else {
             alert('Invalid tag. Please select from the available tags.');
         }
@@ -60,21 +65,22 @@ const AskQuestion = () => {
 
   return (
     <div className='ask-question'>
-        <div className="ask-ques-container">
+        <div className="ask-ques-container" >
             <h1>Ask a public Question</h1>
             <form onSubmit={handleSubmit}>
-                <div className="ask-form-container">
-                    <label htmlFor="ask-ques-title">
+                <div className="ask-form-container" >
+                    <label htmlFor="ask-ques-title" onFocus={(e) => {setFocus(false)}}>
                         <h4>Title</h4>
                         <p>Be Specific and imagine you're asking a question to another person</p>
                         <input type="text" id="ask-ques-title" onChange={(e) => {setQuestionTitle(e.target.value)}} placeholder='e.g. What is a function in javascript?'/>
                     </label>
-                    <label htmlFor="ask-ques-body">
+                    <label htmlFor="ask-ques-body" onFocus={(e) => {setFocus(false)}}>
                         <h4>Body</h4>
                         <p>Include all the information someone would need to answer your question</p>
                         <textarea name="ask-ques-body" id="ask-ques-body" onChange={(e) => {setQuestionBody(e.target.value)}} cols="30" rows="10" onKeyPress={handleEnter}></textarea>
                     </label>
-                    <label htmlFor="ask-ques-tags">
+                    <div onFocus={(e) => {setFocus(true)}}>
+                    <label htmlFor="ask-ques-tags" >
                     <h4>Tags</h4>
                     <p>Add upto 5 tags to describe what your question is about</p>
                     <div>{
@@ -83,12 +89,13 @@ const AskQuestion = () => {
                     ))}
                     </div>
                     <input type="text" id="ask-ques-tags" value={tagInput} onChange={handleInputChange} onKeyPress={handleKeyPress} placeholder="Enter tags" />
-                    <div className='tags-list-container'>
-                    {availableTags.filter((tag) => tag.TagName.startsWith(tagInput)).map((tag, index) => (
+                    <div className='tags-list-container' >
+                    { Focus === true  && availableTags.filter((tag) => tag.TagName.startsWith(tagInput)).map((tag, index) => (
                         <div className='tag' onClick={() => {setTagInput(tag.TagName)}} key={index}><h5>{tag.TagName}</h5><br /><p className='tag-desc'>{tag.TagDesc}</p></div>
                     ))}
                     </div>
                     </label>
+                    </div>
                 </div>
                 <input type="submit" value='Post your question' className='review-btn'/>
             </form>
