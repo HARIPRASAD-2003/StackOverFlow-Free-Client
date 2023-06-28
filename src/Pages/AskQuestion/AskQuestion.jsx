@@ -22,12 +22,12 @@ const AskQuestion = () => {
 
     const handleInputChange = (e) => {
         if(e.target.value !== " "){
-            setTagInput(e.target.value);
+            setTagInput(e.target.value.toLowerCase());
         }
     };
 
     const TagClickChange = (tagsInput) => {
-        setTagInput(tagsInput);
+        // setTagInput(tagsInput);
         if (TagsName.includes(tagsInput)) {
             if(!questionTags.includes(tagsInput)) {
             setQuestionTags([...questionTags, tagsInput]);
