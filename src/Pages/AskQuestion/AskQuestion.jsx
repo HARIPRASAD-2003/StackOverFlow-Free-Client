@@ -26,6 +26,19 @@ const AskQuestion = () => {
         }
     };
 
+    const TagClickChange = (tagsInput) => {
+        setTagInput(tagsInput);
+        if (TagsName.includes(tagsInput)) {
+            if(!questionTags.includes(tagsInput)) {
+            setQuestionTags([...questionTags, tagsInput]);
+            setTagInput('');
+            } else {
+                setTagInput('');
+            }
+        } else {
+            alert('Invalid tag. Please select from the available tags.');
+        }
+    }
 
     const handleKeyPress = (e) => {
         if (e.key === ' ' && tagInput) {
@@ -34,7 +47,7 @@ const AskQuestion = () => {
             setQuestionTags([...questionTags, tagInput]);
             setTagInput('');
             } else {
-                setTagInput("");
+                setTagInput('');
             }
         } else {
             alert('Invalid tag. Please select from the available tags.');
@@ -91,7 +104,7 @@ const AskQuestion = () => {
                     <input type="text" id="ask-ques-tags" value={tagInput} onChange={handleInputChange} onKeyPress={handleKeyPress} placeholder="Enter tags" />
                     <div className='tags-list-container' >
                     { Focus === true  && availableTags.filter((tag) => tag.TagName.startsWith(tagInput)).map((tag, index) => (
-                        <div className='tag' onClick={() => {setTagInput(tag.TagName)}} key={index}><h5>{tag.TagName}</h5><br /><p className='tag-desc'>{tag.TagDesc}</p></div>
+                        <div className='tag' onClick={() => {TagClickChange(tag.TagName)}} key={index}><h5>{tag.TagName}</h5><br /><p className='tag-desc'>{tag.TagDesc}</p></div>
                     ))}
                     </div>
                     </label>
