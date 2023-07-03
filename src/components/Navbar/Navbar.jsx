@@ -71,8 +71,8 @@ const Navbar = () => {
         <FontAwesomeIcon icon={faBars} onClick={() => setMenuToggle(!menuToggle)} className='toggle-btn'/>
       }
       </>
-      <Link onClick={() => setMenuToggle(false)} to='/' className='nav-item nav-logo'>
-            <img src={logo} alt='logo'/>
+      <Link  to='/' className='nav-item nav-logo'>
+          <img src={logo} onClick={() => setMenuToggle(false)} alt='logo'/>
       </Link>
       { !menuToggle ? <div className="navbar">
         <Link to='/About' className='nav-item nav-btn' >About</Link>

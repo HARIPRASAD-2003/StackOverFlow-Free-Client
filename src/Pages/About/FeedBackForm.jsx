@@ -14,7 +14,7 @@ function FeedbackForm() {
     event.preventDefault();
 
     try {
-      const response = await axios.post('https://stack-overflow-free-server-hp.onrender.com/send-feedback', {
+      const response = await axios.post('https://stack-overflow-free-server-hp.onrender.com/verification/send-feedback', {
         name,
         email,
         subject,
@@ -28,6 +28,11 @@ function FeedbackForm() {
       console.error(error);
       setErrorMessage('Oops! Something went wrong.');
       setSuccessMessage('');
+    } finally {
+      setName('');
+      setEmail('');
+      setMessage("");
+      setSubject("");
     }
   };
 
