@@ -14,7 +14,7 @@ function FeedbackForm() {
     event.preventDefault();
 
     try {
-      const response = await axios.post('/send-feedback', {
+      const response = await axios.post('https://stack-overflow-free-server-hp.onrender.com/send-feedback', {
         name,
         email,
         subject,
