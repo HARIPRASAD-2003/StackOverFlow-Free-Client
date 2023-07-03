@@ -6,7 +6,7 @@ const FeeBackPage = () => {
   return (
     <div className='home-container-1'>
     <LeftSidebar />
-    <div className='home-container-2'>
+    <div className='home-container-2' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
       <FeedbackForm />
     </div>
   </div>
