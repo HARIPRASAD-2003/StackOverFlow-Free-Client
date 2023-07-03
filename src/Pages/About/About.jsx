@@ -1,7 +1,8 @@
 import React from 'react';
 import './About.css';
 import founder from '../../assets/founder.png'
-import FeedbackForm from './FeedBackForm';
+// import FeedbackForm from './FeedBackForm';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -97,6 +98,7 @@ const About = () => {
       <li>Phone: +91 7550160349</li>
       <li>Address: 123 Main Street, City, Country</li>
     </ul>
+    <p>You can also provide your <Link to='/FeedBack-Form'>feedback</Link> here</p>
   </section>
 
   <footer className="footer">

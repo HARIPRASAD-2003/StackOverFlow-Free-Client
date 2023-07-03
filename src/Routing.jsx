@@ -21,6 +21,7 @@ import ChatBotpage from './Pages/ChatBotPage/ChatBotpage'
 import ProductsPage from './Pages/ProductsPage/ProductsPage'
 import EmailConfirmationPage from './Pages/Verification/EmailConfirmationPage'
 import OTPConfirmationPage from './Pages/Verification/OTPConfirmationPage'
+import FeeBackPage from './Pages/About/FeeBackPage'
 
 
 const Routing = () => {
@@ -47,6 +48,7 @@ const Routing = () => {
       <Route path='/Products' Component={ProductsPage}/>
       <Route path='/Verify-email' Component={EmailConfirmationPage}/>
       <Route path='/Verify-OTP' Component={OTPConfirmationPage}/>
+      <Route path='/FeedBack-Form' Component={FeeBackPage}/>
     </Routes>
   )
 }
