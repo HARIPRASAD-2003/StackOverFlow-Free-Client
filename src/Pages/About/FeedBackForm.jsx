@@ -20,14 +20,14 @@ function FeedbackForm() {
         subject,
         message,
       });
-      if(response.status === 200) {
-        alert('Thank you for your feedback!');
-      } else {
-        alert ('Oops! Something went wrong.');
-      }
+      console.log(response)
+
+      setSuccessMessage('Thank you for your feedback!');
+      setErrorMessage('');
     } catch (error) {
       console.error(error);
-      alert ('Oops! Something went wrong.');
+      setErrorMessage('Oops! Something went wrong.');
+      setSuccessMessage('');
     }
   };
 
