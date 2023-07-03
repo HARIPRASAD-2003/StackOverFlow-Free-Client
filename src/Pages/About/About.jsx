@@ -89,18 +89,18 @@ const About = () => {
     </div>
   </section>
 
+  <section>
+    <FeedbackForm/>
+  </section>
+
   <section className="contact-section">
     <h3>Contact Us</h3>
     <p>If you have any questions, feedback, or inquiries, we'd love to hear from you. Feel free to reach out to us through the contact information below:</p>
     <ul>
       <li>Email: StackOverFlow-hp@outlook.com</li>
-      <li>Phone: +1 (123) 456-7890</li>
+      <li>Phone: +91 7550160349</li>
       <li>Address: 123 Main Street, City, Country</li>
     </ul>
-  </section>
-
-  <section>
-    <FeedbackForm/>
   </section>
 
   <footer className="footer">
