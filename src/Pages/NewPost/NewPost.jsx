@@ -8,8 +8,8 @@ import { Image, Video } from 'cloudinary-react';
 
 
 const NewPost = () => {
-  const [postBody, setPostBody] = useState();
-  const [postTitle, setPostTitle] = useState();
+  const [postBody, setPostBody] = useState('');
+  const [postTitle, setPostTitle] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const User = useSelector((state) => (state.currentUserReducer));
@@ -56,13 +56,17 @@ const NewPost = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(postTitle === ''){
+      alert("Enter post TITLE...!!")
+    } else {
     dispatch(newPost({
       postTitle: postTitle,
       postBody: postBody,
       postContent: uploadedContentUrls,
-      userPosted: User.result.name,
+      userPosted: User?.result.name,
       userId: User?.result?._id
     }, navigate));
+  }
   };
 
   return (
@@ -74,27 +78,27 @@ const NewPost = () => {
             <div className="ask-form-container">
               <label htmlFor="new-post-title">
                 <h4>Title</h4>
-                <p>Be specific and imagine you're asking a question to another person</p>
+                <p>Be specific on Giving Title to your post</p>
                 <input type="text" id="new-post-title" onChange={(e) => { setPostTitle(e.target.value) }} />
               </label>
               <label htmlFor="new-post-file">
                 <h4>Content</h4>
-                <p>Upload images or videos</p>
+                <p>Upload images or videos. Click Upload to add your content to the post.</p>
                 <input id="new-post-file" type="file" onChange={handleContentChange} multiple />
                 <input type="button" value='Upload' className='review-btn' onClick={handleUpload} style={{width: 'auto', margin: '5px'}}/>
                 <div className='post-media-container' style={{display: 'flex'}}>
                   {uploadedContentUrls.map((url, index) => (
                     url.includes('video') ? (
-                        <Video className="post-video"  cloudName="dkmz5cbr1" publicId={url} controls width="300" height="200" />
+                        <Video className="post-video" key={index} cloudName="dkmz5cbr1" publicId={url} controls width="300" height="200" />
                     ) : (
-                        <Image className="post-image"  cloudName="dkmz5cbr1" publicId={url} width="300" height="200" />
+                        <Image className="post-image" key={index} cloudName="dkmz5cbr1" publicId={url} width="300" height="200" />
                     )
                   ))}
                 </div>
               </label>
               <label htmlFor="ask-ques-body">
                 <h4>Body</h4>
-                <p>Include all the information someone would need to answer your question</p>
+                <p>Description for your post</p>
                 <textarea name="ask-ques-body" id="ask-ques-body" onChange={(e) => {setPostBody(e.target.value) }} onKeyDown={handleEnter} cols="30" rows="10"></textarea>
               </label>
             </div>
