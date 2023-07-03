@@ -1,11 +1,21 @@
-.feedback-form {
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .feedback-form {
     max-width: 400px;
-    margin: 0 auto;
     padding: 20px;
     background-color: #f7f7f7;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+  
+  /* Rest of the CSS code remains the same */
+  
   
   .feedback-form h2 {
     text-align: center;
