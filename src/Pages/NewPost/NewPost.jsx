@@ -58,6 +58,8 @@ const NewPost = () => {
     e.preventDefault();
     if(postTitle === ''){
       alert("Enter post TITLE...!!")
+    } else if(postBody === '' && uploadedContentUrls.length === 0){
+      alert("Post must contain either Body or Content...!!!")
     } else {
     dispatch(newPost({
       postTitle: postTitle,
