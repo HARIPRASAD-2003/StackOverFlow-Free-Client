@@ -1,6 +1,7 @@
 import React from 'react';
 import './About.css';
 import founder from '../../assets/founder.png'
+import FeedbackForm from './FeedBackForm';
 
 const About = () => {
   return (
@@ -96,6 +97,10 @@ const About = () => {
       <li>Phone: +1 (123) 456-7890</li>
       <li>Address: 123 Main Street, City, Country</li>
     </ul>
+  </section>
+
+  <section>
+    <FeedbackForm/>
   </section>
 
   <footer className="footer">
