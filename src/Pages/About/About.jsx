@@ -89,10 +89,6 @@ const About = () => {
     </div>
   </section>
 
-  <section>
-    <FeedbackForm/>
-  </section>
-
   <section className="contact-section">
     <h3>Contact Us</h3>
     <p>If you have any questions, feedback, or inquiries, we'd love to hear from you. Feel free to reach out to us through the contact information below:</p>
