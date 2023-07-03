@@ -32,9 +32,10 @@ export default function Auth(props) {
     if(isSignup){
       if(!name){
         alert('Enter a name to continue');
+      } else {
+        dispatch(signup({name, email, password}, navigate))
+        navigate('/')
       }
-      dispatch(signup({name, email, password}, navigate))
-      navigate('/')
     }else{
       dispatch(login({email, password}, navigate));
     }

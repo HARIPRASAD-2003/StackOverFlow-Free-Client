@@ -6,7 +6,7 @@ import logo from '../../assets/logo.png';
 import search from '../../assets/search-solid.svg';
 import Avatar from '../../components/Avatar/Avatar';
 import './Navbar.css';
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 
 import { setCurrentUser } from '../../actions/currentUser';
 import decode from 'jwt-decode'
@@ -71,7 +71,7 @@ const Navbar = () => {
         <FontAwesomeIcon icon={faBars} onClick={() => setMenuToggle(!menuToggle)} className='toggle-btn'/>
       }
       </>
-      <Link to='/' className='nav-item nav-logo'>
+      <Link onClick={() => setMenuToggle(false)} to='/' className='nav-item nav-logo'>
             <img src={logo} alt='logo'/>
       </Link>
       { !menuToggle ? <div className="navbar">
