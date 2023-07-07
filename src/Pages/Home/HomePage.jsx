@@ -20,6 +20,7 @@ const HomePage = () => {
         <div className="overlay-content">
           <h2>Hero Section</h2>
           <p>Some text for the hero section</p>
+          <button className="ask-button">Ask your first question</button>
         </div>
       </section>
 
@@ -41,6 +42,7 @@ const HomePage = () => {
               <p>Views: 200 | Votes: 15</p>
             </li>
           </ul>
+          <button className="view-more-button">View More</button>
         </div>
       </section>
 
