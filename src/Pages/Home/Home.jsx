@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className='home-container-1'>
       <LeftSidebar />
-      <div className='home-container-2' style={imageStyle}>
+      <div className='home-container-3' style={imageStyle}>
         {/* <HomeMainbar />
         <RightSidebar /> */}
       </div>
