@@ -72,7 +72,7 @@ const Navbar = () => {
       }
       </>
       <Link  to='/' className='nav-item nav-logo'>
-          <img src={logo} onClick={() => setMenuToggle(false)} alt='logo'/>
+          <img src={logo} onClick={() => setMenuToggle(false)} alt='logo' width='150px' height='40px'/>
       </Link>
       { !menuToggle ? <div className="navbar">
         <Link to='/About' className='nav-item nav-btn' >About</Link>

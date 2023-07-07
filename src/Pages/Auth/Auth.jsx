@@ -45,7 +45,7 @@ export default function Auth(props) {
     <section className='auth-section'>
       { isSignup && <AboutAuth/>}
       <div className='auth-container'>
-        { !isSignup && <img src={icon} alt='stack overflow' className='login-logo'/>}
+        { !isSignup && <img src={icon} alt='stack overflow' className='login-logo' width='40px' height='40px'/>}
         <form onSubmit={handleSubmit}>
           {
             isSignup && (

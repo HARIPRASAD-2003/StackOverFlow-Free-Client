@@ -9,9 +9,9 @@ import HomePage from './HomePage'
 const Home = () => {
 
   return (
-    <div className='home-container-1'>
+    <div className='home-container-1' >
       <LeftSidebar />
-      <div className='home-container-2'>
+      <div className='home-container-2' style={{width: "100%" , maxWidth: "100%"}}>
         {/* <HomeMainbar />
         <RightSidebar /> */}
         <HomePage/>

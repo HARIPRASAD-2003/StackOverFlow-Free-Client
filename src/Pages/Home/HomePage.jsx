@@ -1,56 +1,77 @@
 import React from 'react';
 import './HomePage.css'; // Import the CSS file for styling
-import home_background from '../../assets/home-background.png';
+import home_background_1 from '../../assets/home-background-1.png';
+import home_background_2 from '../../assets/home-background-2.png';
+import home_background_3 from '../../assets/home-background-3.png';
+import home_background_4 from '../../assets/home-background-4.png';
 
 const HomePage = () => {
   return (
     <div className="homepage">
       <div className="image-overlay">
-        <img src={home_background} alt="Background" />
+        <img src={home_background_1} alt="Background" />
         <div className="overlay-content">
           <h1>Welcome to Stack Overflow</h1>
           <p>Ask questions, get answers, and share knowledge</p>
         </div>
       </div>
 
-      <section className="hero-section overlay-section">
-        <div className="hero-image-overlay">
-          <img src={home_background} alt="Hero" />
-        </div>
+      
+      <div className="image-overlay" style={{width: '100%'}}>
+        <img src={home_background_2} alt="Background" />
         <div className="overlay-content">
           <h2>Hero Section</h2>
-          <p>Some text for the hero section</p>
+          <p>
+            Stack Overflow is a question and answer website for professional and enthusiast programmers. It is a
+            community-driven platform where developers can ask questions, provide answers, and share knowledge.
+          </p>
           <button className="ask-button">Ask your first question</button>
         </div>
-      </section>
-
-      <section className="featured-questions overlay-section">
-        <div className="featured-image-overlay">
-          <img src={home_background} alt="Featured" />
         </div>
+      
+
+      <div className="image-overlay" style={{width: '100%'}}>
+        <img src={home_background_3} alt="Background" />
         <div className="overlay-content">
           <h2>Featured Questions</h2>
           <ul>
             <li>
-              <h3>Question Title 1</h3>
-              <p>Question summary</p>
+              <h3>How to create a responsive website?</h3>
+              <p>
+                I'm looking for suggestions on building a responsive website. Any tips or best practices would be
+                appreciated.
+              </p>
               <p>Views: 100 | Votes: 10</p>
             </li>
             <li>
-              <h3>Question Title 2</h3>
-              <p>Question summary</p>
+              <h3>How to debug JavaScript code?</h3>
+              <p>
+                My JavaScript code isn't working as expected. What are some effective methods for debugging JavaScript
+                applications?
+              </p>
               <p>Views: 200 | Votes: 15</p>
             </li>
           </ul>
           <button className="view-more-button">View More</button>
         </div>
-      </section>
-
-      <footer className="footer overlay-section">
-        <div className="footer-image-overlay">
-          <img src={home_background} alt="Footer" />
         </div>
+      {/* </section> */}
+
+      {/* <section className="about-section overlay-section"> */}
+      <div className="image-overlay" style={{width: '100%'}}>
+        <img src={home_background_4} alt="Background" />
         <div className="overlay-content">
+          <h2>About Stack Overflow</h2>
+          <p>
+            Stack Overflow is a question and answer website for professional and enthusiast programmers. It is a
+            community-driven platform where developers can ask questions, provide answers, and share knowledge.
+          </p>
+        </div>
+        </div>
+      {/* </section>s */}
+
+      <footer className="footer " style={{width: '100%'}}>
+        <div>
           <p>&copy; 2023 Stack Overflow. All rights reserved.</p>
         </div>
       </footer>
