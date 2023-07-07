@@ -7,7 +7,7 @@ import '../../App.css'
 
 const Home = () => {
   const imageStyle = {
-    backgroundImage: 'url("./home-background.png")',
+    backgroundImage: "./home-background.png",
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
