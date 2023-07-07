@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <div className="homepage">
       <div className="image-overlay">
-        <img src="./home-background.png" alt="Background" />
+        <img src="../../assets/home-background.png" alt="Background" />
         <div className="overlay-content">
           <h1>Welcome to Stack Overflow</h1>
           <p>Ask questions, get answers, and share knowledge</p>
@@ -14,7 +14,7 @@ const HomePage = () => {
 
       <section className="hero-section overlay-section">
         <div className="hero-image-overlay">
-          <img src="./home-background.png" alt="Hero" />
+          <img src="../../assets/home-background.png" alt="Hero" />
         </div>
         <div className="overlay-content">
           <h2>Hero Section</h2>
@@ -24,7 +24,7 @@ const HomePage = () => {
 
       <section className="featured-questions overlay-section">
         <div className="featured-image-overlay">
-          <img src="./home-background.png" alt="Featured" />
+          <img src="../../assets/home-background.png" alt="Featured" />
         </div>
         <div className="overlay-content">
           <h2>Featured Questions</h2>
@@ -45,7 +45,7 @@ const HomePage = () => {
 
       <footer className="footer overlay-section">
         <div className="footer-image-overlay">
-          <img src="./home-background.png" alt="Footer" />
+          <img src="../../assets/home-background.png" alt="Footer" />
         </div>
         <div className="overlay-content">
           <p>&copy; 2023 Stack Overflow. All rights reserved.</p>
