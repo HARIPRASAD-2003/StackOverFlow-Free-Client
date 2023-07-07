@@ -5,20 +5,16 @@ import LeftSidebar from '../../components/LeftSidebar/LeftSidebar'
 import '../../App.css'
 
 
+
 const Home = () => {
-  const imageStyle = {
-    backgroundImage: "./home-background.png",
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-  };
 
   return (
     <div className='home-container-1'>
       <LeftSidebar />
-      <div className='home-container-3' style={imageStyle}>
+      <div className='home-container-2'>
         {/* <HomeMainbar />
         <RightSidebar /> */}
+
       </div>
     </div>
   )
