@@ -1,6 +1,6 @@
 /* Home Page styles */
 .homepage {
-    background-image: url("path/to/background-image.jpg");
+    background-image: './home-background.png';
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
