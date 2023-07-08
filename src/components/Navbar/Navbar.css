@@ -2,7 +2,7 @@
     min-height: 50px;
     width: 100%;
     margin: 0% auto;
-    border-top: solid 3px #ef8236;
+    border-top: solid 3px #5900ff;
     box-shadow: 0px 1px 5px #00000033;
     position: fixed;
     z-index: 15;
@@ -166,7 +166,7 @@
         width: 100%;
         padding: 1rem 3%;
         background-color: #f8f9f9;
-        border-top: solid 3px #ef8236;
+        border-top: solid 3px #5900ff;
         border-top: .1rem solid rgba(0, 0, 0, .2);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         /* display: none; */

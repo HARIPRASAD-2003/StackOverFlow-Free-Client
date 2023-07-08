@@ -11,26 +11,24 @@ const HomePage = () => {
       <div className="image-overlay">
         <img src={home_background_1} alt="Background" />
         <div className="overlay-content">
-          <h1>Welcome to Stack Overflow</h1>
+          <h1>Welcome to TECH MARVEL</h1>
           <p>Ask questions, get answers, and share knowledge</p>
         </div>
       </div>
 
-      
-      <div className="image-overlay" style={{width: '100%'}}>
+      <div className="image-overlay" style={{ width: '100%' }}>
         <img src={home_background_2} alt="Background" />
-        <div className="overlay-content">
-          <h2>Hero Section</h2>
+        <div className="overlay-content" style={{backgroundColor: 'white', borderRadius: '10px', paddingBottom: "10px"}}>
+          <h2>Discover Our Platform</h2>
           <p>
-            Stack Overflow is a question and answer website for professional and enthusiast programmers. It is a
+            TECH MARVEL is a question and answer website for professional and enthusiast programmers. It is a
             community-driven platform where developers can ask questions, provide answers, and share knowledge.
           </p>
           <button className="ask-button">Ask your first question</button>
         </div>
-        </div>
-      
+      </div>
 
-      <div className="image-overlay" style={{width: '100%'}}>
+      <div className="image-overlay" style={{ width: '100%' }}>
         <img src={home_background_3} alt="Background" />
         <div className="overlay-content">
           <h2>Featured Questions</h2>
@@ -54,25 +52,22 @@ const HomePage = () => {
           </ul>
           <button className="view-more-button">View More</button>
         </div>
-        </div>
-      {/* </section> */}
+      </div>
 
-      {/* <section className="about-section overlay-section"> */}
-      <div className="image-overlay" style={{width: '100%'}}>
+      <div className="image-overlay" style={{ width: '100%' }}>
         <img src={home_background_4} alt="Background" />
         <div className="overlay-content">
-          <h2>About Stack Overflow</h2>
+          <h2>About TECH MARVEL</h2>
           <p>
-            Stack Overflow is a question and answer website for professional and enthusiast programmers. It is a
+            TECH MARVEL is a question and answer website for professional and enthusiast programmers. It is a
             community-driven platform where developers can ask questions, provide answers, and share knowledge.
           </p>
         </div>
-        </div>
-      {/* </section>s */}
+      </div>
 
-      <footer className="footer " style={{width: '100%'}}>
+      <footer className="footer" style={{ width: '100%' }}>
         <div>
-          <p>&copy; 2023 Stack Overflow. All rights reserved.</p>
+          <p>&copy; 2023 TECH MARVEL. All rights reserved.</p>
         </div>
       </footer>
     </div>
