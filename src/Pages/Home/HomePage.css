@@ -123,6 +123,7 @@ ul li {
   .image-overlay{
     max-width: 100%;
   }
+
   .largeScreens {
     display: none;
   }
@@ -177,6 +178,10 @@ ul li {
   .overlay-section h3 {
     font-size: x-small;
     /* margin-bottom: 10px; */
+  }
+
+  .footer p{
+    font-size: xx-small;
   }
 
   .overlay-section p {
