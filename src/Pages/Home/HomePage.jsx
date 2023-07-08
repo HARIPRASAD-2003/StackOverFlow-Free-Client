@@ -30,7 +30,7 @@ const HomePage = () => {
           <p>Ask questions, get answers, and share knowledge</p>
         </div>
       </div>
-
+        <section className={'overlay-section'}>
       <div className="image-overlay" style={{ width: '100%' }}>
         <img src={home_background_2} alt="Background" />
         <div className="overlay-content" style={{ borderRadius: '10px', padding: '10px', paddingBottom: '30px' }}>
@@ -40,6 +40,7 @@ const HomePage = () => {
             community-driven platform where developers can ask questions, provide answers, and share knowledge.
             </p>
             <button className="ask-button" onClick={checkAuth}>Ask your first question</button>
+            <div className='largeScreens'>
             <h3>Join our community to:</h3>
             <ul>
             <li><p>Connect with other developers</p></li>
@@ -47,10 +48,12 @@ const HomePage = () => {
             <li><p>Share your expertise</p></li>
             <li><p>Stay updated with the latest technologies</p></li>
             </ul>
+            </div>
         </div>
       </div>
+      </section>
 
-
+        <section className='overlay-section'>
       <div className="image-overlay" style={{ width: '100%' }}>
         <img src={home_background_3} alt="Background"/>
         <div className="overlay-content">
@@ -64,7 +67,7 @@ const HomePage = () => {
               </p>
               <p>Views: 100 | Votes: 10</p>
             </li>
-            <li>
+            <li className='largeScreens'>
               <h3>How to debug JavaScript code?</h3>
               <p>
                 My JavaScript code isn't working as expected. What are some effective methods for debugging JavaScript
@@ -76,7 +79,8 @@ const HomePage = () => {
           <button className="view-more-button" onClick={() => navigate('/Questions')}>View More</button>
         </div>
       </div>
-
+      </section>
+      <section className='overlay-section'>
         <div className="image-overlay" style={{ width: '100%' }}>
             <img src={home_background_4} alt="Background" />
             <div className="overlay-content">
@@ -85,6 +89,7 @@ const HomePage = () => {
             TECH MARVEL is a question and answer website for professional and enthusiast programmers. It is a
             community-driven platform where developers can ask questions, provide answers, and share knowledge.
             </p>
+            <div className='largeScreens'>
             <h3>Why Choose TECH MARVEL:</h3>
             <ul>
             <li>Wide range of technology topics covered</li>
@@ -93,6 +98,7 @@ const HomePage = () => {
             <li>User-friendly interface</li>
             <li>Regular updates and improvements</li>
             </ul>
+            </div>
             <p>
             Join TECH MARVEL today and enhance your programming knowledge while connecting with a vibrant community of
             developers.
@@ -100,7 +106,7 @@ const HomePage = () => {
             <button className="view-more-button" onClick={() => navigate('/About')}>View More</button>
         </div>
         </div>
-
+        </section>
 
       <footer className="footer" style={{ width: '100%' }}>
         <div>

@@ -1,93 +1,178 @@
 .homepage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #111111;
-    padding: 20px;
-    width: 100%;
-  }
-  
-  .image-overlay {
-    position: relative;
-    width: 100%;
-  }
-  
-  .image-overlay img {
-    display: block;
-    width: 100%;
-    object-fit: cover;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #111111;
+  padding: 20px;
+  width: 100%;
+}
+
+.image-overlay {
+  position: relative;
+  width: 100%;
+}
+
+.image-overlay img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.overlay-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.overlay-content p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.overlay-section {
+  position: relative;
+  color: #ffffff;
+  padding: 40px;
+}
+
+.overlay-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.overlay-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+.ask-button,
+.view-more-button {
+  padding: 10px 20px;
+  background-color: #2196f3;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: #333333;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #ffffff;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
   .overlay-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 80%;
+    max-width: 90%;
+    padding: 10px;
   }
-  
-  .overlay-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .overlay-content p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-  
+
   .overlay-section {
-    position: relative;
-    color: #ffffff;
-    padding: 40px;
+    padding: 20px;
   }
-  
+
   .overlay-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
   }
-  
+
   .overlay-section p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-bottom: 15px;
   }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 20px;
+}
+
+@media (max-width: 760px) {
+  .overlay-content {
+    max-width: 90%;
+    padding: 10px;
   }
-  
-  ul li {
+
+  .largeScreens {
+    display: none;
+  }
+
+  .overlay-section {
+    padding: 20px;
+  }
+
+  .overlay-section h2 {
+    font-size: 1.5rem;
     margin-bottom: 10px;
   }
-  
-  .ask-button,
-  .view-more-button {
-    padding: 10px 20px;
-    background-color: #2196f3;
-    border: none;
-    color: #ffffff;
-    font-weight: bold;
-    cursor: pointer;
+
+  .overlay-section h3 {
+    font-size: 1.5rem;
+    /* margin-bottom: 10px; */
   }
-  
-  .footer {
-    background-color: #333333;
-    padding: 20px;
-    text-align: center;
+
+  .overlay-section p {
+    font-size: 1rem;
+    margin-bottom: 10px;
   }
-  
-  .footer p {
-    font-size: 14px;
-    color: #ffffff;
-    margin: 0;
+}
+
+@media (max-width: 480px) {
+  .overlay-content {
+    max-width: 100%;
+    padding: 10px;
   }
-  
+
+  .overlay-content h1{
+    font-size: small;
+  }
+
+  .overlay-content p{
+    font-size: xx-small;
+  }
+
+  .overlay-section {
+    padding: 10px;
+  }
+
+  .overlay-section h2 {
+    font-size: x-small;
+    margin-bottom: 10px;
+  }
+  .overlay-section h3 {
+    font-size: x-small;
+    /* margin-bottom: 10px; */
+  }
+
+  .overlay-section p {
+    font-size: xx-small;
+    margin-bottom: 10px;
+  }
+}
