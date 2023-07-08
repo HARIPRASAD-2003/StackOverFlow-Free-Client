@@ -8,6 +8,7 @@ const Chatbot = () => {
   const [selectedQuery, setSelectedQuery] = useState('');
   const [botResponse, setBotResponse] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const handleQuerySelection = (e) => {
     setSelectedQuery(e.target.value);
@@ -15,11 +16,20 @@ const Chatbot = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true)
     if (selectedQuery !== '') {
       getBotResponse(selectedQuery);
     }
   };
 
+  const isLoading = () => {
+    if(!chatHistory[chatHistory.length - 1].bot.typing){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
   
   const getBotResponse = (query) => {
     axios
@@ -56,7 +66,10 @@ const Chatbot = () => {
       let isTyping = true;
 
       const typeEffect = () => {
-        if (!isTyping) return;
+        if (!isTyping){
+          // setLoading(false)
+          return;
+        }
         if (newMessage === botResponse) {
           setTimeout(() => {
             isTyping = false;
@@ -110,13 +123,15 @@ const Chatbot = () => {
           value={selectedQuery}
           placeholder="Enter your query..."
           className="chatbot-input"
+          disabled={isLoading}
         />
-        <button type="submit" disabled={selectedQuery === ''} className="send-button">
+        <button type="submit" disabled={isLoading} className="send-button">
           Send
         </button>
       </form>
       {botResponse && !chatHistory[chatHistory.length - 1].bot.typing && (
         <div className="bot-response">
+          {/* {setLoading(false)} */}
           <strong>Bot: </strong>
           {botResponse}
         </div>

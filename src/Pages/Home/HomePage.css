@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #f2f2f2;
+    background-color: #111111;
     padding: 20px;
     width: 100%;
   }
@@ -12,13 +12,11 @@
   .image-overlay {
     position: relative;
     width: 100%;
-    height: 100vh;
   }
   
   .image-overlay img {
     display: block;
     width: 100%;
-    height: 100%;
     object-fit: cover;
   }
   
@@ -28,7 +26,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
   }
   
   .overlay-content h1 {
@@ -38,13 +40,13 @@
   
   .overlay-content p {
     font-size: 1.5rem;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .overlay-section {
     position: relative;
+    color: #ffffff;
     padding: 40px;
-    color: white;
   }
   
   .overlay-section h2 {
@@ -72,7 +74,7 @@
     padding: 10px 20px;
     background-color: #2196f3;
     border: none;
-    color: white;
+    color: #ffffff;
     font-weight: bold;
     cursor: pointer;
   }
@@ -85,9 +87,7 @@
   
   .footer p {
     font-size: 14px;
-    color: white;
+    color: #ffffff;
     margin: 0;
   }
-  
-  /* Additional styling for the other components in the homepage */
   
