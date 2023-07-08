@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <div className='home-container-1' >
-      <LeftSidebar />
+      {/* <LeftSidebar /> */}
       <div className='home-container-2' style={{width: "100%" , maxWidth: "100%"}}>
         {/* <HomeMainbar />
         <RightSidebar /> */}

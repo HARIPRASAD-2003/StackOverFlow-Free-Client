@@ -76,6 +76,7 @@ const Navbar = () => {
       </Link>
       { !menuToggle ? <div className="navbar">
         <Link to='/About' className='nav-item nav-btn' >About</Link>
+        <Link to='/Questions' className='nav-item nav-btn' >Questions</Link>
         <Link to='/Products' className='nav-item nav-btn' >Products</Link>
         <Link to='/Community' className='nav-item nav-btn' >Community</Link>
         <form onSubmit={(e) => handleSearch(e)} className='nav-item' >

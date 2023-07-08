@@ -116,7 +116,7 @@ const Chatbot = () => {
           </div>
         ))}
       </div>
-      <form onSubmit={handleSubmit} className="chatbot-form">
+      <form onSubmit={() => {handleSubmit(); setLoading(true)}} className="chatbot-form">
         <input
           type="text"
           onChange={handleQuerySelection}
@@ -129,6 +129,9 @@ const Chatbot = () => {
           Send
         </button>
       </form>
+      {/* {
+        botResponse && !chatHistory[chatHistory.length - 1].bot.typing && (setLoading(false))
+      } */}
       {botResponse && !chatHistory[chatHistory.length - 1].bot.typing && (
         <div className="bot-response">
           {/* {setLoading(false)} */}

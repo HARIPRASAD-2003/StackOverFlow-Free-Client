@@ -8,6 +8,7 @@ import { fetchAllQuestions } from './actions/question';
 import { fetchAllUsers } from './actions/Users';
 import { fetchAllPosts } from './actions/posts';
 import CloudinaryContextProvider from './cloudinaryConfig';
+import ScrollToTop from './ScrollToTop';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <nav>
         <div className='App'>
           <Router>
+            <ScrollToTop/>
             <Navbar />
             <Routing />
           </Router>
