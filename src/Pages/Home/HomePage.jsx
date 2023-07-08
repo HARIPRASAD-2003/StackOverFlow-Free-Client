@@ -97,7 +97,7 @@ const HomePage = () => {
             Join TECH MARVEL today and enhance your programming knowledge while connecting with a vibrant community of
             developers.
             </p>
-            <button className="view-more-button">View More</button>
+            <button className="view-more-button" onClick={() => navigate('/About')}>View More</button>
         </div>
         </div>
 
