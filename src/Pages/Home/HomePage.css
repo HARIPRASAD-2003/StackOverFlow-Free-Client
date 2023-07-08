@@ -48,7 +48,7 @@
 .overlay-section {
   position: relative;
   color: #ffffff;
-  padding: 40px;
+  padding: 40px, 0px;
 }
 
 .overlay-section h2 {

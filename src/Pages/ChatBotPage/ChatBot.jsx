@@ -106,7 +106,7 @@ const Chatbot = () => {
     <div className="chatbot-container">
       <div className="header">
         <img src={chatbotLogo} alt="AI Chat Bot" className="chatbot-logo" />
-        <h1 className="chatbot-title">Stack-Overflow Chat Bot</h1>
+        <h1 className="chatbot-title">TECH_MARVEL Chat Bot</h1>
       </div>
       <div className="chatbot-window">
         {chatHistory.map((message, index) => (
