@@ -30,8 +30,7 @@ const HomePage = () => {
           <p>Ask questions, get answers, and share knowledge</p>
         </div>
       </div>
-        <section className={'overlay-section'}>
-      <div className="image-overlay" style={{ width: '100%' }}>
+      <div className="image-overlay overlay-section" style={{ width: '100%' }}>
         <img src={home_background_2} alt="Background" />
         <div className="overlay-content" style={{ borderRadius: '10px', padding: '10px', paddingBottom: '30px' }}>
             <h2>Discover Our Platform</h2>
@@ -51,10 +50,8 @@ const HomePage = () => {
             </div>
         </div>
       </div>
-      </section>
 
-        <section className='overlay-section'>
-      <div className="image-overlay" style={{ width: '100%' }}>
+      <div className="image-overlay overlay-section" style={{ width: '100%' }}>
         <img src={home_background_3} alt="Background"/>
         <div className="overlay-content">
           <h2>Featured Questions</h2>
@@ -79,9 +76,9 @@ const HomePage = () => {
           <button className="view-more-button" onClick={() => navigate('/Questions')}>View More</button>
         </div>
       </div>
-      </section>
-      <section className='overlay-section'>
-        <div className="image-overlay" style={{ width: '100%' }}>
+      {/* </section> */}
+      {/* <section className='overlay-section'> */}
+        <div className="image-overlay overlay-section" style={{ width: '100%' }}>
             <img src={home_background_4} alt="Background" />
             <div className="overlay-content">
             <h2>About TECH MARVEL</h2>
@@ -106,7 +103,7 @@ const HomePage = () => {
             <button className="view-more-button" onClick={() => navigate('/About')}>View More</button>
         </div>
         </div>
-        </section>
+        {/* </section> */}
 
       <footer className="footer" style={{ width: '100%' }}>
         <div>

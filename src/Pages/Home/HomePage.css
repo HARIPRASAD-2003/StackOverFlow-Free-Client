@@ -95,7 +95,7 @@ ul li {
 
 @media (max-width: 1024px) {
   .overlay-content {
-    max-width: 90%;
+    /* max-width: 90%; */
     padding: 10px;
   }
 
@@ -116,16 +116,19 @@ ul li {
 
 @media (max-width: 760px) {
   .overlay-content {
-    max-width: 90%;
+    max-width: 100%;
     padding: 10px;
   }
 
+  .image-overlay{
+    max-width: 100%;
+  }
   .largeScreens {
     display: none;
   }
 
   .overlay-section {
-    padding: 20px;
+    padding: 2px;
   }
 
   .overlay-section h2 {
@@ -148,6 +151,11 @@ ul li {
   .overlay-content {
     max-width: 100%;
     padding: 10px;
+  }
+  .ask-button,
+  .view-more-button{
+    padding: 1px, 2px;
+    font-size: x-small;
   }
 
   .overlay-content h1{
