@@ -44,6 +44,10 @@ const OTPConfirmationPage = () => {
       <button className="resend-button" onClick={handleResendOTP}>
         Resend OTP
       </button>
+      <p className="spam-message">
+        If you do not receive the OTP email in your inbox, please check your spam folder. The email will be sent from
+        techmarvel-hp@outlook.com.
+      </p>
     </div>
   );
 };
