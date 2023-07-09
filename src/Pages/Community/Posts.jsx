@@ -15,7 +15,7 @@ import { faShare, faComment, faTrashAlt } from '@fortawesome/free-solid-svg-icon
 import { postComment, LikePost, deletePost, reportPost,   } from "../../actions/posts";
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
 // import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisV, faFlag  } from '@fortawesome/free-solid-svg-icons';
 import copy from 'copy-to-clipboard';
 
 
@@ -73,13 +73,17 @@ const Posts = ({post}) => {
   };
 
   const handleReportPost = () => {
-    dispatch(reportPost(post?._id, User?.result?._id))
+    dispatch(reportPost(post?._id, User?.result?._id));
+    console.log('post reported');
+    handlePostOptions();
   }
 
   // Function to handle delete post action
   const handleDeletePost = () => {
     dispatch(deletePost(post?._id, navigate))
     console.log('Post deleted!');
+    handlePostOptions();
+
   };
 
   const handleShare = ({base}) => {
@@ -105,8 +109,8 @@ const Posts = ({post}) => {
             {showPostOptions && (
               <div className="post-options-menu">
                 <ul>
-                  { post?.userId !== User?.result._id && <li onClick={handleReportPost}>Report</li> }
-                  { (post?.userId === User?.result?._id || User?.result?._id === admin?._id) && <li onClick={handleDeletePost}> Delete <FontAwesomeIcon icon={faTrashAlt} onClick={handlePostOptions} /> </li> }
+                  { post?.userId !== User?.result._id && <li onClick={handleReportPost}> Report <FontAwesomeIcon icon={faFlag} /></li> }
+                  { (post?.userId === User?.result?._id || User?.result?._id === admin?._id) && <li onClick={handleDeletePost}> Delete <FontAwesomeIcon icon={faTrashAlt} /> </li> }
                 </ul>
               </div>
             )}

@@ -10,9 +10,9 @@ import './Community.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShare, faComment, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { postComment, LikePost, deletePost, deleteComment } from '../../actions/posts';
+import { postComment, LikePost, deletePost, deleteComment, reportPost } from '../../actions/posts';
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisV, faFlag } from '@fortawesome/free-solid-svg-icons';
 import copy from 'copy-to-clipboard';
 
 const CommentsMainBar = () => {
@@ -31,6 +31,10 @@ const CommentsMainBar = () => {
   const handleDelete = (commentId, noOfComments) => {
     dispatch(deleteComment(id, commentId, noOfComments - 1));
   };
+
+  const handleReport = (commentId, noOfComments) => {
+    console.log(commentId, noOfComments)
+  }
 
   const handlePostComment = (e, commentLength) => {
     e.preventDefault();
@@ -67,6 +71,12 @@ const CommentsMainBar = () => {
     alert('Copied url: ' + url + base);
   };
 
+  const handleReportPost = () => {
+    dispatch(reportPost(post?._id, User?.result?._id));
+    console.log('post reported');
+    handlePostOptions();
+  }
+
   const handleDeletePost = () => {
     dispatch(deletePost(post._id, navigate));
     console.log('Post deleted!');
@@ -95,6 +105,7 @@ const CommentsMainBar = () => {
             {showPostOptions && (
               <div className='post-options-menu'>
                 <ul>
+                  {post?.userId !== User?.result._id && <li onClick={handleReportPost}> Report <FontAwesomeIcon icon={faFlag} /></li>}
                   {post?.userId === User?.result?._id && <li onClick={handleDeletePost}>Delete</li>}
                 </ul>
               </div>
@@ -168,6 +179,12 @@ const CommentsMainBar = () => {
                   >
                     <p>{comment?.commentBody}</p>{' '}
                     <p>
+                      {comment?.userId !== User?.result._id && (
+                        <FontAwesomeIcon
+                        onClick={() => handleReport(comment?._id, post?.noOfComments)}
+                        icon={faFlag}
+                        style={{ cursor: 'pointer' }}
+                        />)}
                       {User?.result?._id === comment?.userId && (
                         <FontAwesomeIcon
                           onClick={() => handleDelete(comment?._id, post?.noOfComments)}

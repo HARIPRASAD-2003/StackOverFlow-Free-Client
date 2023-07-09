@@ -8,7 +8,7 @@ const Chatbot = () => {
   const [selectedQuery, setSelectedQuery] = useState('');
   const [botResponse, setBotResponse] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const handleQuerySelection = (e) => {
     setSelectedQuery(e.target.value);
@@ -16,21 +16,12 @@ const Chatbot = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true)
+    // setLoading(true)
     if (selectedQuery !== '') {
       getBotResponse(selectedQuery);
     }
   };
 
-  const isLoading = () => {
-    if(!chatHistory[chatHistory.length - 1].bot.typing){
-      return false;
-    }
-    else{
-      return true;
-    }
-  }
-  
   const getBotResponse = (query) => {
     axios
       .post('https://stack-overflow-free-server-hp.onrender.com/ChatBot/post', { query })
@@ -116,16 +107,15 @@ const Chatbot = () => {
           </div>
         ))}
       </div>
-      <form onSubmit={() => {handleSubmit(); setLoading(true)}} className="chatbot-form">
+      <form onSubmit={handleSubmit} className="chatbot-form">
         <input
           type="text"
           onChange={handleQuerySelection}
           value={selectedQuery}
           placeholder="Enter your query..."
           className="chatbot-input"
-          disabled={isLoading}
         />
-        <button type="submit" disabled={isLoading} className="send-button">
+        <button type="submit"  className="send-button">
           Send
         </button>
       </form>
