@@ -36,6 +36,7 @@ const Posts = ({post}) => {
   const User = useSelector(state => state.currentUserReducer)
   const users = useSelector(state => state.usersReducer)
   const userPosted = users?.filter((user) => user?._id === post?.userId)[0]?.name
+  const admin = users?.filter((user) => user?.email === 'hariprasadr.it2021@citchennai.net')
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -101,7 +102,7 @@ const Posts = ({post}) => {
               <div className="post-options-menu">
                 <ul>
                   {/* { post?.userId !== User?.result._id && <li onClick={Addfriend}>Follow</li> } */}
-                  { post?.userId === User?.result?._id && <li onClick={handleDeletePost}> Delete <FontAwesomeIcon icon={faTrashAlt} onClick={handlePostOptions} /> </li> }
+                  { (post?.userId === User?.result?._id || User?.result?._id === admin?._id) && <li onClick={handleDeletePost}> Delete <FontAwesomeIcon icon={faTrashAlt} onClick={handlePostOptions} /> </li> }
                 </ul>
               </div>
             )}
