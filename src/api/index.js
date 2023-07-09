@@ -16,7 +16,9 @@ export const signup = (authData) => API.post('/user/signup', authData);
 export const postQuestion = (questionData) => API.post("/questions/Ask", questionData);
 export const getAllQuestions = () => API.get("/questions/get");
 export const deleteQuestion = (id) => API.delete(`/questions/delete/${id}`);
-export const voteQuestion = (id, value, userId) => API.patch(`/questions/vote/${id}`, {value, userId})
+export const voteQuestion = (id, value, userId) => API.patch(`/questions/vote/${id}`, {value, userId});
+export const reportQuestion = (id, userId) => API.patch(`/questions/report/${id}`, {userId});
+
 
 export const postAnswer = (id, noOfAnswers, answerBody, userAnswered, userId) => API.patch(`/answer/post/${id}`, {noOfAnswers, answerBody, userAnswered, userId})
 export const deleteAnswer = (id, answerId, noOfAnswers) => API.patch(`/answer/delete/${id}`, { answerId, noOfAnswers })
@@ -28,7 +30,8 @@ export const addFriend = (id, updateData) => API.patch(`/user/addFriend/${id}`, 
 export const newPost = (newPostData) => API.post("/community/new-post", newPostData);
 export const getAllPosts = () => API.get("/community/get");
 export const deletePost = (id) => API.delete(`/community/delete/${id}`);
-export const LikePost = (id, userId) => API.patch(`/community/like/${id}`, {userId})
+export const LikePost = (id, userId) => API.patch(`/community/like/${id}`, {userId});
+export const reportPost = (id, userId) => API.patch(`/community/report/${id}`, {userId});
 
 export const postComment = (id, noOfComments, commentBody, userCommented, userId ) => API.patch(`/comment/post/${id}`, {noOfComments, commentBody, userCommented, userId})
 export const deleteComment = (id, commentId, noOfComments) => API.patch(`/comment/delete/${id}`, {commentId, noOfComments})

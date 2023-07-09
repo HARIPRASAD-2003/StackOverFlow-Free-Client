@@ -12,7 +12,7 @@ import { faShare, faComment, faTrashAlt } from '@fortawesome/free-solid-svg-icon
 // import Comments from './Comments';
 // import AddComment from './AddComment';
 
-import { postComment, LikePost, deletePost  } from "../../actions/posts";
+import { postComment, LikePost, deletePost, reportPost,   } from "../../actions/posts";
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
 // import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
@@ -36,7 +36,7 @@ const Posts = ({post}) => {
   const User = useSelector(state => state.currentUserReducer)
   const users = useSelector(state => state.usersReducer)
   const userPosted = users?.filter((user) => user?._id === post?.userId)[0]?.name
-  const admin = users?.filter((user) => user?.email === 'hariprasadr.it2021@citchennai.net')
+  const admin = users?.filter((user) => user?._id === "649823141238b69f8f91b779")[0]
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -72,6 +72,10 @@ const Posts = ({post}) => {
     setShowPostOptions(!showPostOptions);
   };
 
+  const handleReportPost = () => {
+    dispatch(reportPost(post?._id, User?.result?._id))
+  }
+
   // Function to handle delete post action
   const handleDeletePost = () => {
     dispatch(deletePost(post?._id, navigate))
@@ -96,17 +100,17 @@ const Posts = ({post}) => {
             </Link>
             <h4>{userPosted}</h4>
             <h6>posted {moment(post?.postedOn)?.fromNow()}</h6>
-            {post?.userId === User?.result?._id && (<div className="post-options">
+            <div className="post-options">
             <FontAwesomeIcon icon={faEllipsisV} onClick={handlePostOptions} />
             {showPostOptions && (
               <div className="post-options-menu">
                 <ul>
-                  {/* { post?.userId !== User?.result._id && <li onClick={Addfriend}>Follow</li> } */}
+                  { post?.userId !== User?.result._id && <li onClick={handleReportPost}>Report</li> }
                   { (post?.userId === User?.result?._id || User?.result?._id === admin?._id) && <li onClick={handleDeletePost}> Delete <FontAwesomeIcon icon={faTrashAlt} onClick={handlePostOptions} /> </li> }
                 </ul>
               </div>
             )}
-            </div>)}
+            </div>
         </div>
         {
         isImage && <div className='display-post-content'>

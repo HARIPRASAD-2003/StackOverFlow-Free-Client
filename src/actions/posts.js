@@ -44,6 +44,16 @@ export const LikePost = (id, userId) => async(dispatch) => {
       }
 }
 
+export const reportPost = (id, userId) => async(dispatch) => {
+      try {
+            const { data } = await api.reportPost(id, userId)
+            dispatch(fetchAllPosts())
+            console.log(data)
+      } catch (error) {
+            console.log(error)
+      }
+}
+
 export const deletePost = (id, navigate) => async(dispatch) => {
       try {
             api.deletePost(id)

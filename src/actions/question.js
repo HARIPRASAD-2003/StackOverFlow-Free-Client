@@ -44,6 +44,16 @@ export const voteQuestion = (id, value, userId) => async(dispatch) => {
       }
 }
 
+export const reportQuestion = (id, userId) => async(dispatch) => {
+      try {
+            const{ data } = await api.reportQuestion(id, userId)
+            dispatch(fetchAllQuestions())
+            console.log(data)
+      } catch (error) {
+            console.log(error)
+      }
+}
+
 export const deleteQuestion = (id, navigate) => async(dispatch) => {
       try {
             const{ data } = api.deleteQuestion(id)
