@@ -127,7 +127,7 @@ const HomePage = () => {
                   <li>Regular updates and improvements</li>
                 </ul>
             </div>
-            <p>
+            <p className='smallScreens'>
             Join TECH MARVEL today and enhance your programming knowledge while connecting with a vibrant community of
             developers.
             </p>
