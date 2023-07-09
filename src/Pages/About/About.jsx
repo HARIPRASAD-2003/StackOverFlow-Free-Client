@@ -120,7 +120,7 @@ const About = () => {
           {/* <li>Address: 123 Main Street, City, Country</li> */}
         </ul>
         <p>
-          You can also provide your <Link to="/feedback">feedback</Link> here.
+          You can also provide your <Link to="/FeedBack-Form">feedback</Link> here.
         </p>
       </section>
 
