@@ -49,10 +49,11 @@ const HomePage = () => {
             <li><p>Immerse yourself in coding challenges</p></li>
             <li><p>Access exclusive coding resources</p></li>
           </ul>
+          <p>
+            At TECH MARVEL, we believe in fostering a vibrant and supportive community. Whether you're a beginner or an experienced coder, you'll find a wealth of knowledge and expertise to fuel your programming journey. Our platform offers a range of features to help you grow, including interactive discussions, expert answers, and access to the latest industry trends. Join us today and unlock your full coding potential!
+          </p>
         </div>
-        <p>
-          At TECH MARVEL, we believe in fostering a vibrant and supportive community. Whether you're a beginner or an experienced coder, you'll find a wealth of knowledge and expertise to fuel your programming journey. Our platform offers a range of features to help you grow, including interactive discussions, expert answers, and access to the latest industry trends. Join us today and unlock your full coding potential!
-        </p>
+        
 
         </div>
       </div>
