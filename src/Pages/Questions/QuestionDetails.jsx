@@ -51,6 +51,15 @@ const QuestionDetails = () => {
     dispatch(deleteQuestion(id, navigate));
   };
 
+  const checkAuth =() => {
+    if (User === null) {
+      alert('Login or Signup to ask a question');
+      navigate('/Auth');
+    } else {
+      navigate("/AskQuestion");
+    }
+  }
+
   const handleShare = () => {
     copy(url + location.pathname);
     alert('Copied url: ' + url + location.pathname);
@@ -137,10 +146,10 @@ const QuestionDetails = () => {
                 </Link>
               ))}{' '}
               or
-              <Link to='/AskQuestion' style={{ textDecoration: 'none', color: '#009dff' }}>
+              <p onClick={checkAuth} style={{ textDecoration: 'none', color: '#009dff' }}>
                 {' '}
                 Ask Your Own Question.
-              </Link>
+              </p>
             </p>
           </section>
         </>
