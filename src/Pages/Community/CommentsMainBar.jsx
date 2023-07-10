@@ -17,7 +17,7 @@ import copy from 'copy-to-clipboard';
 
 const CommentsMainBar = () => {
   const { id } = useParams();
-  const url = 'http://localhost:3000';
+  const url = 'https://techmarvel.netlify.app';
   const postsList = useSelector((state) => state.postsReducer);
   const post = postsList?.data?.filter((post) => post._id === id)[0];
   const [addComment, setAddComment] = useState('');

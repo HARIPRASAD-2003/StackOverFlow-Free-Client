@@ -14,7 +14,7 @@ import copy from 'copy-to-clipboard';
 const QuestionDetails = () => {
   const { id } = useParams();
   const location = useLocation();
-  const url = 'http://localhost:3000';
+  const url = 'https://techmarvel.netlify.app';
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const questionsList = useSelector((state) => state.questionsReducer);

@@ -30,7 +30,7 @@ import copy from 'copy-to-clipboard';
 const Posts = ({post}) => {
 
   const location = useLocation();
-  const url = 'http://localhost:3000';
+  const url = 'https://techmarvel.netlify.app';
   const [addComment, setAddComment] = useState('')
   const comment = post?.comments.sort((a,b) => a.postedOn < b.postedOn ? 1 : -1)[0];
   const User = useSelector(state => state.currentUserReducer)
