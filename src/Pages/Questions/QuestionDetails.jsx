@@ -145,12 +145,12 @@ const QuestionDetails = () => {
                   {tag}{' '}
                 </Link>
               ))}{' '}
-              or
-              <p onClick={checkAuth} style={{ textDecoration: 'none', color: '#009dff' }}>
+              or </p>
+              <p onClick={checkAuth} style={{cursor:'pointer', textDecoration: 'none', color: '#009dff' }}>
                 {' '}
                 Ask Your Own Question.
               </p>
-            </p>
+            
           </section>
         </>
       ) : (
