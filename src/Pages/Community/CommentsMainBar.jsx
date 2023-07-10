@@ -105,7 +105,7 @@ const CommentsMainBar = () => {
             {showPostOptions && (
               <div className='post-options-menu'>
                 <ul>
-                  {/* {(post?.userId !== User?.result._id && false) && <li onClick={handleReportPost}> Report <FontAwesomeIcon icon={faFlag} /></li>} */}
+                  {post?.userId !== User?.result._id && <li onClick={handleReportPost}> Report <FontAwesomeIcon icon={faFlag} /></li>}
                   {post?.userId === User?.result?._id && <li onClick={handleDeletePost}>Delete</li>}
                 </ul>
               </div>
@@ -179,12 +179,12 @@ const CommentsMainBar = () => {
                   >
                     <p>{comment?.commentBody}</p>{' '}
                     <p>
-                      {comment?.userId !== User?.result._id && (
+                      {/* {comment?.userId !== User?.result._id && (
                         <FontAwesomeIcon
                         onClick={() => handleReport(comment?._id, post?.noOfComments)}
                         icon={faFlag}
                         style={{ cursor: 'pointer' }}
-                        />)}
+                        />)} */}
                       {User?.result?._id === comment?.userId && (
                         <FontAwesomeIcon
                           onClick={() => handleDelete(comment?._id, post?.noOfComments)}
