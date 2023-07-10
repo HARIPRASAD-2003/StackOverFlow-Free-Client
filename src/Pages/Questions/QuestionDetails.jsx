@@ -146,6 +146,7 @@ const QuestionDetails = () => {
                 </Link>
               ))}{' '}
               or </p>
+              {' '}
               <p onClick={checkAuth} style={{cursor:'pointer', textDecoration: 'none', color: '#009dff' }}>
                 {' '}
                 Ask Your Own Question.
