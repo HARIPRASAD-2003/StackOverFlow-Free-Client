@@ -137,12 +137,12 @@ const QuestionDetails = () => {
               <br />
               <input type='submit' className='post-ans-btn' value='Post Your Answer' />
             </form>
+            <div style={{display:'flex'}}>
             <p>
               Browse other Question tagged
               {quest.questionTags.map((tag) => (
                 <Link to={`/tag/${tag}`} key={tag} className='ans-tags'>
-                  {' '}
-                  {tag}{' '}
+                  {' '}{tag}{' '}
                 </Link>
               ))}{' '}
               or </p>
@@ -150,7 +150,7 @@ const QuestionDetails = () => {
                 {' '}
                 Ask Your Own Question.
               </p>
-            
+            </div>
           </section>
         </>
       ) : (
