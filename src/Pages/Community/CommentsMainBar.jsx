@@ -105,7 +105,7 @@ const CommentsMainBar = () => {
             {showPostOptions && (
               <div className='post-options-menu'>
                 <ul>
-                  {post?.userId !== User?.result._id && <li onClick={handleReportPost}> Report <FontAwesomeIcon icon={faFlag} /></li>}
+                  {(post?.userId !== User?.result._id && false) && <li onClick={handleReportPost}> Report <FontAwesomeIcon icon={faFlag} /></li>}
                   {post?.userId === User?.result?._id && <li onClick={handleDeletePost}>Delete</li>}
                 </ul>
               </div>
