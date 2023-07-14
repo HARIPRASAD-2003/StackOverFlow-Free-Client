@@ -40,4 +40,7 @@ export const sendOTPVerification = (id, email) => API.post("/verification/sendOT
 export const resendOTPVerification = (id, email) => API.post("/verification/resendOTPVerification", {id, email})
 export const verifyOTP = (id, otp) => API.patch("/verification/verifyOTP", {id, otp})
 
+export const sendResetMail = (id, email) => API.post("/verification/sendResetMail", {id, email});
+export const resetPassword = (id, newPassword) => API.post("/verification/resetPassword", {id, newPassword})
+
 // export const getResponse = (query) => API.post("/ChatBot/post", {query})

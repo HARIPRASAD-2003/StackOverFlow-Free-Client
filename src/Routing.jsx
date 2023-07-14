@@ -22,6 +22,9 @@ import ProductsPage from './Pages/ProductsPage/ProductsPage'
 import EmailConfirmationPage from './Pages/Verification/EmailConfirmationPage'
 import OTPConfirmationPage from './Pages/Verification/OTPConfirmationPage'
 import FeeBackPage from './Pages/About/FeeBackPage'
+import ResetEmailConfirmationPage from './Pages/forgotPassword/EmailConfirmationPage'
+import MailSent from './Pages/forgotPassword/MailSent'
+import ForgotPassword from './Pages/forgotPassword/forgotPassword'
 
 
 const Routing = () => {
@@ -49,6 +52,11 @@ const Routing = () => {
       <Route path='/Verify-email' Component={EmailConfirmationPage}/>
       <Route path='/Verify-OTP' Component={OTPConfirmationPage}/>
       <Route path='/FeedBack-Form' Component={FeeBackPage}/>
+      <Route path='/reset-verify' Component={ResetEmailConfirmationPage}/>
+      <Route path='/mail-sent' Component={MailSent}/>
+      <Route path='/reset-password/:id' Component={ForgotPassword}/>
+
+
     </Routes>
   )
 }

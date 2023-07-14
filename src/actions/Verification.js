@@ -41,7 +41,6 @@ export const resendOTPVerification = ({id, email}, navigate) => async (dispatch)
 export const verifyOTP = ({id, otp}, navigate) => async (dispatch) => {
     try {
         console.log('Start-verify')
-
         const { data } = await api.verifyOTP(id, otp);
         console.log("VERIFY_OTP", data);
         // dispatch({type: "SEND_OTP", payload: data});
@@ -56,5 +55,33 @@ export const verifyOTP = ({id, otp}, navigate) => async (dispatch) => {
     } catch (error) {
         console.log("Verify_OTP_ERR", error);
         console.log("error", error);
+    }
+}
+
+export const sendResetMail = ({id, email}, navigate) => async (dispatch) => {
+    try{
+        const { data } = await api.sendResetMail(id, email);
+        if(data.status === "FAILED") {
+            alert("Error!! Due to High Data Traffic! Please do Confirm Email again")
+            navigate("/reset-verify")
+        }else{
+            navigate("/mail-sent")
+        }
+    } catch(error) {
+        console.log(error);
+    }
+}
+
+export const resetPassword = ({id, newPassword}, navigate) => async (dispatch) => {
+    try {
+        const { data } = await api.resetPassword(id, newPassword);
+        if(data.status === "FAILED") {
+            alert("Error!! Due to High Data Traffic! Please do retry again")
+            // navigate("/reset-verify")
+        }else{
+            navigate("/")
+        }
+    } catch(error) {
+        console.log(error)
     }
 }
