@@ -12,7 +12,8 @@ const ForgotPassword = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.prevenDefault();
     if(newPass === conPass) {
       dispatch(resetPassword({id: id, newPassword: newPass}, navigate))
     } else {
