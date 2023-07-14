@@ -24,7 +24,7 @@ import OTPConfirmationPage from './Pages/Verification/OTPConfirmationPage'
 import FeeBackPage from './Pages/About/FeeBackPage'
 import ResetEmailConfirmationPage from './Pages/forgotPassword/EmailConfirmationPage'
 import MailSent from './Pages/forgotPassword/MailSent'
-import ForgotPassword from './Pages/forgotPassword/forgotPassword'
+import ForgotPassword from './Pages/ForgotPassword/ForgotPassword'
 
 
 const Routing = () => {
