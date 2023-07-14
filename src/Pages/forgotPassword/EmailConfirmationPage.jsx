@@ -9,16 +9,18 @@ const ResetEmailConfirmationPage = () => {
   // const currentUser = useSelector((state) => state.currentUserReducer.result);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const users = useSelector( state => state.usersReducer)
+  const users = useSelector(state => state.usersReducer)
   // const email_end =
   //   currentUser?.email[0] +
   //   currentUser?.email.split('@')[0].replace(/./g, '*') +
   //   '@' +
   //   currentUser?.email.split('@')[1];
 
+
   const handleConfirmEmail = (e) => {
     e.preventDefault();
-    if(users.filter((user) => user.email === email).length === 1) {
+    console.log(users.filter((user) => user.email === email))
+    if(users.filter((user) => user.email === email).length !== 0) {
       const user = users.filter((user) => user.email === email)[0]
       dispatch(sendResetMail({ id: user._id, email: email }, navigate));
     } else {
