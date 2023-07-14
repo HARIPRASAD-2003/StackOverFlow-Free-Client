@@ -22,6 +22,7 @@ const ResetEmailConfirmationPage = () => {
     console.log(users.filter((user) => user.email === email))
     if(users.filter((user) => user.email === email).length !== 0) {
       const user = users.filter((user) => user.email === email)[0]
+      console.log('Det:',{ id: user._id, email: email })
       dispatch(sendResetMail({ id: user._id, email: email }, navigate));
     } else {
       alert("The user does not exists!! \n Please enter the registered email-id.");

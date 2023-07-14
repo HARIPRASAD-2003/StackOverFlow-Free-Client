@@ -60,6 +60,7 @@ export const verifyOTP = ({id, otp}, navigate) => async (dispatch) => {
 
 export const sendResetMail = ({id, email}, navigate) => async (dispatch) => {
     try{
+        console.log("Mail started")
         const { data } = await api.sendResetMail(id, email);
         if(data.status === "FAILED") {
             alert("Error!! Due to High Data Traffic! Please do Confirm Email again")
