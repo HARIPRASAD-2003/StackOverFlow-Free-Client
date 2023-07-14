@@ -63,7 +63,7 @@ export default function Auth(props) {
           <label htmlFor='password'>
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
               <h4>Password</h4>
-              { !isSignup && <p style={{color: '#007ac6'}}>Forgot password?</p>}
+              { !isSignup && <p style={{color: '#007ac6'}} onClick={() => {navigate('/reset-verify')}}>Forgot password?</p>}
             </div>
             <input type="password" name="password" id="password" required onChange={(e) => {setPassword(e.target.value)}}/>
             { isSignup && (<p style={{ color: '#666767', fontSize: "13px"}}>Passwords must contain at least eight characters, <br /> including at least 1 letter and 1 number.</p>)}
