@@ -33,6 +33,7 @@ export default function Auth(props) {
       if(!name){
         alert('Enter a name to continue');
       } else {
+        alert('Please Wait!! \n While we Sign up with your email-id')
         dispatch(signup({name, email, password}, navigate))
         navigate('/')
       }
