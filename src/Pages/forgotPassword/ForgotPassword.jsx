@@ -13,7 +13,7 @@ const ForgotPassword = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
-    e.prevenDefault();
+    e.preventDefault();
     if(newPass === conPass) {
       dispatch(resetPassword({id: id, newPassword: newPass}, navigate))
     } else {
