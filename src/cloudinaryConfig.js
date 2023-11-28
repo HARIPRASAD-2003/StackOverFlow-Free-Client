@@ -1,9 +1,9 @@
 import { CloudinaryContext } from 'cloudinary-react';
 
 const cloudinaryConfig = {
-  cloudName: 'Tech',
-  apiKey: '344914161581168',
-  apiSecret: 'GTFYlVInT7dA9V1_29YF_LCQhNI',
+  cloudName: 'dalle2',
+  apiKey: '444668288941939',
+  apiSecret: 'a9kjuDUM2msD1vyM0_agRbIn23E',
 };
 
 const CloudinaryContextProvider = ({ children }) => (
