@@ -32,7 +32,7 @@ const NewPost = () => {
       formData.append('upload_preset', 'fiv1grcc');
 
       const response = await fetch(
-        `https://api.cloudinary.com/v1_1/dkmz5cbr1/${file.type.includes('video') ? 'video' : 'image'}/upload`,
+        `https://api.cloudinary.com/v1_1/dalle2/${file.type.includes('video') ? 'video' : 'image'}/upload`,
         {
           method: 'POST',
           body: formData,
@@ -91,9 +91,9 @@ const NewPost = () => {
                 <div className='post-media-container' style={{display: 'flex'}}>
                   {uploadedContentUrls.map((url, index) => (
                     url.includes('video') ? (
-                        <Video className="post-video" key={index} cloudName="dkmz5cbr1" publicId={url} controls width="300" height="200" />
+                        <Video className="post-video" key={index} cloudName="dalle2" publicId={url} controls width="300" height="200" />
                     ) : (
-                        <Image className="post-image" key={index} cloudName="dkmz5cbr1" publicId={url} width="300" height="200" />
+                        <Image className="post-image" key={index} cloudName="dalle2" publicId={url} width="300" height="200" />
                     )
                   ))}
                 </div>
